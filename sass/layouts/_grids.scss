@@ -1,0 +1,107 @@
+
+
+/** row 1 **/
+
+.row { 
+    width: 75vw;
+    margin: 0 auto ;
+
+    @include responsive(tab-port){
+        width : 90vw;
+    }
+
+}
+
+.row::after{
+    content: '';
+    clear: both;
+    display: table; 
+}
+
+
+[class^='colomn-'] {
+   float: left;
+   text-align: center;
+
+   @include responsive(phone){
+       float: none;
+       width: 65% !important;
+       margin:  0 auto;
+   }
+}
+
+  /** row 1 **/ 
+
+.colomn-1-of-2 {
+   width: calc((100% - 2vw)/2);
+   text-align: left;
+  
+}
+
+.colomn-1-of-2:not(:last-child){
+    margin-right: 2vw;
+
+    @include responsive(phone){
+        margin: 0 auto;
+    }
+
+}
+
+  /** row 2 **/ 
+
+.colomn-1-of-3{
+    width: calc((100% - 8vw) / 3); 
+    
+}
+
+.colomn-1-of-3:not(:last-child){
+    margin-right: 4vw;
+
+    @include responsive(phone){
+        margin: 0 auto;
+        padding-bottom: 4rem;
+    }
+}
+
+
+
+/** row 3 **/
+
+// .colomn-1-of-3{
+//     width : calc((100% - 4vw)/3);
+// }
+
+// .colomn-2-of-3{
+//     width :  calc( 2 * ((100% - 4vw)/3 ) + 2vw) ;
+// }
+
+/** row 4 **/ 
+.colomn-1-of-4{
+    width : calc((100% - 12vw)/4);
+
+    @include responsive(phone){
+        margin: 0 auto;
+    }
+}
+
+.colomn-1-of-4:not(:last-child){
+    margin-right: 4vw;
+
+    @include responsive(phone){
+        margin: 0 auto;
+        padding-bottom: 4rem;
+    }
+}
+
+/** row 5 **/ 
+
+// .colomn-2-of-4{
+//     width :  calc( 2 * ((100% - 6vw)/4) + 2vw);
+// }
+
+/** row 6 **/ 
+
+// .colomn-3-of-4{
+//     width : calc( 3 * ((100% - 6vw)/4) + 4vw );
+
+// }

@@ -1,0 +1,81 @@
+.footer {
+    padding: 10rem 0 5rem 0;
+    background-color: #2c3e50;
+
+    @include responsive(phone){
+    padding: 8rem 0 8rem 0;
+        
+    }
+
+
+    &-logo-box {
+        text-align: center;
+
+        @include responsive(phone){
+            margin-bottom: 2rem !important;
+        }
+    }
+
+    &-logo {
+        width: 15rem;
+        height: auto;
+
+        @include responsive(phone){
+            width: 10rem;
+        }
+    }
+
+    &-navigation {
+       text-align: center;
+
+       @include responsive(phone){
+           text-align: center;
+           margin-bottom: 4rem;
+       }
+
+    }
+
+    &-list {
+        border-top: 1px solid #bdc3c73b;
+        display: inline-block;
+        padding-top: 1rem;
+    }
+
+    &-item {
+        display: inline-block;
+        list-style-type : none;
+        font-size: 1.4rem;
+
+
+        &:not(:last-child){
+            margin-right: 1rem;
+        }
+    }
+
+    &-links{
+    
+        &:visited , &-links:active {
+            color: #ecf0f1;
+        }
+    }
+
+    &-copyright {
+        color:  #ecf0f1;
+        font-size: 1.4rem;
+        border-top: 1px solid #bdc3c73b;
+        padding-top: 1rem;
+        
+        @include responsive(phone){
+            text-align: center;
+        }
+
+        
+        & a {
+            color: $color-primary !important;
+        }
+
+    }
+
+
+    
+}

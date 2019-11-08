@@ -1,0 +1,74 @@
+.composition{
+    position: relative;
+
+    @include responsive(phone){
+        margin-top: 5rem;
+    }
+    
+    &_photo{
+        width:60%;
+        box-shadow: 0 2px 5px  rgba($color-black, 1);
+        border-radius: 5px;
+        position: absolute;
+        z-index: 1;
+        transition: all 0.2s;
+
+        @include responsive(phone){
+            width: 33.33333%;
+            float: left;
+            transform: scale(1.5);
+            position: relative;
+        }
+
+        &--p1{
+            top: 0;
+            left: 10%;
+
+            @include responsive(phone){
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &--p2{
+            top: 5rem;
+            right: 5%;
+
+            @include responsive(phone){
+                top:0;
+                right: 0;
+                z-index: 2;
+
+            }
+        }
+
+        &--p3{
+            top: 10rem;
+            left: 20%;
+
+            @include responsive(phone){
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &:hover{
+            z-index: 10;
+            transform: scale(1.2);
+
+            @include responsive(phone){
+                transform: scale(1.8);
+                z-index: 10;
+            }
+        }
+    }
+
+    // &:hover , &_photo:not(:hover) {
+    //     transform : scale(0.95);
+
+    //     @include responsive(phone){
+    //         transform: scale(1.5);
+    //     }
+        
+    // }
+}

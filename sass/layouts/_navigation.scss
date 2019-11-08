@@ -1,0 +1,141 @@
+.navigation {
+    
+    &-background {
+       
+        background-image: linear-gradient( to left bottom ,rgba($color-primary,0.94) , rgba($color-primary-dark,0.99));
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        position: fixed;
+        z-index: 100;
+        transition: all .7s cubic-bezier(1,.05,.06,1.07);
+        position: fixed;
+        top: 7rem;
+        right: 6.5rem;
+
+        @include responsive(tab-port) {
+            top: 4.5rem;
+            right: 4rem;
+        }
+
+        @include responsive(phone) {
+            top: 5rem;
+            right: 4.5rem;
+        }
+
+    }
+
+    &-checkbox {
+        display: none;
+
+        &:checked ~ .navigation-background  {
+            visibility: visible;
+            transform: scale(100);
+        }
+
+        &:checked ~ .navigation-menu {
+            visibility: visible;
+            opacity: 1;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        &:checked ~ .navigation-btn .navigation-icon {
+            visibility: hidden;
+
+            &::after {
+                content: "\2716";
+                visibility: visible;
+                font-size: 2rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50% , -50%);
+
+            }
+        }
+    }
+
+    &-btn {
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        background-color: $color-white;
+        border-radius: 50%;
+        height: 5rem;
+        width: 5rem;
+        z-index: 200;
+        cursor: pointer;
+        text-align: center;
+        box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.19);
+
+        @include responsive(tab-port) {
+            top: 4rem;
+            right: 4rem;
+        }
+
+        
+
+    }
+
+    &-icon {
+        display: inline;
+        font-size: 2.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+       
+        
+
+    }
+    
+    &-menu {
+        position: fixed;
+        top : 50%;
+        left: 200%;
+        transform: translate(0,-50%);
+        z-index: 150;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .7s cubic-bezier(.99,-0.3,.02,1.3);
+    }
+
+    &-list {
+        text-align: center;
+    }
+
+    &-item {
+        
+        margin-bottom: 1rem;
+        list-style: none;
+        border-bottom: 5px solid rgba(255, 255, 255, 0.03);  
+
+
+    }
+
+    &-link {
+        &:visited, &:link {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 2.7rem;
+            padding: 1rem 1.5rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            transition: color 0.5s;
+            background-image: linear-gradient(120deg , transparent 0% , transparent 50% , white 50%);
+            background-size: 230%;
+            transition:  all 0.3s ;
+            display: inline-block;
+        }
+
+        &:hover { 
+            color:$color-primary-dark;
+            background-position:  100%;
+            transform: translateX(1rem);
+
+        }
+    }
+
+    
+}

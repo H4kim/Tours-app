@@ -1,0 +1,25 @@
+/*
+phone = 0 600px 
+tablet portrait = 600 - 900px
+tablet landscape = 900 - 1200px
+current = 1200 - 1800px
+big screen = + 1800px
+*/
+
+@mixin responsive($breakpoint) { 
+    @if $breakpoint == phone {
+        @media only screen and (max-width : "600px"){@content};
+    }
+
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width : "900px"){@content};
+    }
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width : "1200px"){@content};
+    }
+
+    @if $breakpoint == big-screen {
+        @media only screen and (min-width : "1800px"){@content};
+    }
+ }
